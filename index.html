@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joe & Mariane's Wedding</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    h1, h2, h3, .agenda-item, a {
+      font-family: 'Great Vibes', cursive;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+    section h2::before {
+      content: "✨ "; /* Sparkle */
+    }
+    section h2::after {
+      content: " ✨"; /* Sparkle */
+    }
+    .agenda-item::before {
+      margin-right: 8px;
+      font-size: 1.2em;
+    }
+    section {
+      backdrop-filter: blur(1px);
+    }
+    .agenda-item, .agenda-item a {
+      font-size: 1.5em;
+    }
+    .background-slideshow .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6); /* lighter overlay */
+      z-index: 1;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Slideshow -->
+  <div class="background-slideshow">
+    <div class="overlay"></div>
+    <img src="bride_groom1.jpg" class="active" alt="Bride and Groom 1" />
+    <img src="bride_groom2.jpg" alt="Bride and Groom 2" />
+    <img src="bride_groom3.jpg" alt="Bride and Groom 3" />
+  </div>
+
+  <!-- Music -->
+  <audio autoplay loop>
+    <source src="calm_music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Main Section -->
+  <section>
+    <p class="bible-verse">
+    “Love is patient, love is kind. It does not envy, it does not boast, it is not proud.”<br>— 1 Corinthians 13:4
+    </p>
+    <h1>Joe & Mariane</h1>
+    <h3>Are Getting Married</h3>
+    <p class="scroll-indicator">Scroll down to discover more</p>
+  </section>
+
+  <!-- Hour and Location Section -->
+  <section>
+    <h2>When & Where</h2>
+    <p class="agenda-item"><span class="icon">🕒</span>Saturday, August 30th, 2025 at 8:30 PM</p>
+    <p class="agenda-item"><span class="icon">📍</span>Saydit El Khalas Church, Al Maamrieh</p>
+    <p class="scroll-indicator">Scroll down to see the agenda</p>
+  </section>
+
+  <!-- Agenda Section -->
+  <section>
+    <h2>Wedding Day Agenda</h2>
+    <div class="agenda-item"><span class="icon">💒</span> Wedding Ceremony: 6:00 PM - 8:00 PM</div>
+    <div class="agenda-item"><span class="icon">🎉</span> Welcome Drink & Photos: 8:00 PM - 8:30 PM</div>
+    <div class="agenda-item"><span class="icon">🍽️</span> Dinner: 8:30 PM - 10:00 PM</div>
+    <div class="agenda-item"><span class="icon">🎶</span> Dancing & Celebration: 10:00 PM till late</div>
+    <p class="scroll-indicator">Scroll down to view the gift registry</p>
+  </section>
+
+  <!-- Gift Registry Section -->
+  <section>
+    <h2>Gift Registry</h2>
+    <p class="agenda-item">Your presence is our biggest gift!<br> If you wish to celebrate our special day with a gift, a wedding list is available</p>
+    <ul>
+      <div class="agenda-item">💝 <a href="https://www.example.com/registry1" target="_blank">Whish Money</a></div>
+      <div class="agenda-item">🎁 20230917-03</div>
+    </ul>
+    <p class="scroll-indicator">Scroll down to contact us</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section>
+    <h2>Contact Us</h2>
+    <p class="agenda-item">For any questions or special requests, please contact us:</p>
+    <p class="agenda-item">📧 <a href="mailto:joeandmariane@example.com">joeandmariane@example.com</a></p>
+    <p class="agenda-item">📱 +33 6 12 34 56 78</p>
+    <p class="scroll-indicator">Thank you for joining our journey ❤️</p>
+  </section>
+
+  <script>
+    const images = document.querySelectorAll('.background-slideshow img');
+    let index = 0;
+
+    setInterval(() => {
+      images[index].classList.remove('active');
+      index = (index + 1) % images.length;
+      images[index].classList.add('active');
+    }, 8000);
+  </script>
+</body>
+</html>
