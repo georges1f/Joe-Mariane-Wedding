@@ -1,147 +1,194 @@
+/* ========== RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    /* === RESET === */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body {
-      font-family: 'Inter', sans-serif;
-      background: #000;
-      color: #fff;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
+html, body {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  background: #000;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  position: relative;
+  z-index: 1;
+}
 
-    body { position: relative; z-index: 1; }
+/* ========== BACKGROUND SLIDESHOW ========== */
+.background-slideshow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+}
 
-    /* === SLIDESHOW === */
-    .background-slideshow {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      overflow: hidden;
-      z-index: 0;
-    }
-    .background-slideshow img {
-      position: absolute;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transform: scale(1);
-      transition: opacity 2s ease, transform 20s ease;
-    }
-    .background-slideshow img.active {
-      opacity: 1;
-      transform: scale(1.1);
-      filter: brightness(0.7);
-      z-index: 1;
-    }
-    .background-slideshow .overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 2;
-      pointer-events: none;
-    }
+.background-slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 2s ease, transform 20s ease;
+  z-index: 0;
+}
 
-    /* === SECTIONS === */
-    section {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 4rem 2rem;
-      text-align: center;
-      backdrop-filter: blur(1px);
-      z-index: 3;
-    }
+.background-slideshow img.active {
+  opacity: 1;
+  transform: scale(1.1);
+  filter: brightness(0.7);
+  z-index: 1;
+}
 
-    /* === HEADINGS === */
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 4rem;
-      margin-bottom: 1rem;
-      margin-top: 1em;
-    }
-    h2 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-    }
-    h2::before { content: "\2728 "; }
-    h2::after { content: " \2728"; }
-    h3 { font-size: 1.5rem; font-style: italic; margin-bottom: 1rem; }
+.background-slideshow .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  pointer-events: none;
+}
 
-    /* === BIBLE VERSE === */
-    .bible-verse {
-      font-family: 'Allura', cursive;
-      font-size: 2em;
-      color: #cfa;
-      max-width: 650px;
-      margin: 2em auto;
-      line-height: 1.4;
-    }
+/* ========== SECTION STYLES ========== */
+section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  backdrop-filter: blur(1px);
+  z-index: 3;
+}
 
-    /* === TIMELINE === */
-    .timeline {
-      border-left: 2px dashed #fff;
-      padding-left: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-    .timeline-item {
-      position: relative;
-      padding-left: 1rem;
-    }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -11px;
-      top: 5px;
-      width: 12px;
-      height: 12px;
-      background: #fff;
-      border-radius: 50%;
-    }
-    .time {
-      font-weight: bold;
-      color: #ccc;
-      font-size: 0.9rem;
-    }
-    .event {
-      font-size: 1.3rem;
-    }
+/* ========== TYPOGRAPHY ========== */
+h1, h2, h3, .agenda-item, a {
+  font-family: 'Great Vibes', cursive;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
 
-    /* === LINKS === */
-    a {
-      color: #ffd;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+h1 {
+  font-size: 3.5rem;
+  margin-top: 1.5em;
+  margin-bottom: 1rem;
+}
 
-    /* === SCROLL INDICATOR === */
-    .scroll-indicator {
-      font-size: 0.9rem;
-      opacity: 0.7;
-      animation: pulse 2s infinite;
-      margin-top: 2rem;
-    }
-    .scroll-indicator::after { content: ' ↓'; font-size: 1.2em; }
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
 
-    @keyframes pulse {
-      0% { opacity: 0.7; }
-      50% { opacity: 1; }
-      100% { opacity: 0.7; }
-    }
+h3 {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
 
-    /* === RESPONSIVE === */
-    @media screen and (max-width: 768px) {
-      h1 { font-size: 2.5rem; }
-      h2 { font-size: 2rem; }
-      .event { font-size: 1.1rem; }
-      .bible-verse { font-size: 1.5rem; }
-    }
+section h2::before {
+  content: "✨ ";
+}
+
+section h2::after {
+  content: " ✨";
+}
+
+/* ========== AGENDA & INFO ========== */
+.agenda-item {
+  font-size: 1.5em;
+  margin: 0.75rem 0;
+}
+
+.agenda-item::before {
+  margin-right: 8px;
+  font-size: 1.2em;
+}
+
+.icon {
+  margin-right: 0.5rem;
+}
+
+/* ========== BIBLE VERSE ========== */
+.bible-verse {
+  font-family: 'Allura', cursive !important;
+  font-size: 2em;
+  color: #8b5e3c;
+  line-height: 1.3;
+  text-align: center;
+  margin: 0 auto 2.5em auto;
+  max-width: 650px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* ========== LINKS ========== */
+a {
+  color: #ffdfc4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ========== SCROLL INDICATOR ========== */
+.scroll-indicator {
+  position: absolute;
+  bottom: calc(1.5rem + env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  opacity: 0.7;
+  animation: pulse 2s infinite;
+  padding-bottom: env(safe-area-inset-bottom);
+  z-index: 10;
+}
+
+section:first-of-type .scroll-indicator {
+  position: fixed;
+  z-index: 20;
+}
+
+/* Optional: Add down arrow */
+.scroll-indicator::after {
+  content: ' ↓';
+  font-size: 1.2em;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes pulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .agenda-item {
+    font-size: 1.2rem;
+  }
+
+  .bible-verse {
+    font-size: 1.5rem;
+  }
+
+  section {
+    background-color: rgba(0, 0, 0, 0.5); /* improve text readability */
+    border-radius: 12px;
+  }
+}
