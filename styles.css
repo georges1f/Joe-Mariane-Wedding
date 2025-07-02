@@ -114,7 +114,7 @@ section h2::after {
   padding: 1.5rem;
   position: relative;
 }
-.timeline-image-container {
+.celebration-image-container {
   display: flex;
   justify-content: center;
   margin-top: 40px;
@@ -122,7 +122,7 @@ section h2::after {
   padding: 0 20px;
 }
 
-.timeline-image {
+.celebration-image {
   max-width: 100%;
   height: auto;
   display: block;
@@ -224,6 +224,35 @@ section h2::after {
   align-items: center;
   justify-content: center;
 }
+
+/* .agenda-image-container {
+  width: 100%;
+  margin: 2rem 0;
+  overflow: hidden;
+}
+
+.agenda-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  object-fit: cover;
+} */
+
+.agenda-image-container {
+  max-width: 600px;         /* Adjust size as needed */
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.agenda-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
 
 
 .icon {
