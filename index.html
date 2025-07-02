@@ -7,18 +7,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
     h1, h2, h3, .agenda-item, a {
       font-family: 'Great Vibes', cursive;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
-    section h2::before {
-      content: "✨ "; /* Sparkle */
-    }
-    section h2::after {
-      content: " ✨"; /* Sparkle */
-    }
+
     .agenda-item::before {
       margin-right: 8px;
       font-size: 1.2em;
@@ -118,13 +114,47 @@
   </section>
 
   <!-- Contact Section -->
-  <section>
-    <h2>Contact Us</h2>
-    <p class="agenda-item">For any questions or special requests, please contact us:</p>
-    <p class="agenda-item"><span class="icon"><i class="fa-regular fa-envelope"></i></span> <a href="mailto:joeandmariane@example.com">joeandmariane@example.com</a></p>
-    <p class="agenda-item"><span class="icon"><i class="fa-solid fa-phone"></i></span> +33 6 12 34 56 78</p>
-    <p class="scroll-indicator">Thank you for joining our journey ❤️</p>
+  <section class="contact-section">
+    <h2 class="section-title">Be Our Guest</h2>
+    <p class="rsvp-note">Please respond before August 5, 2025</p>
+
+    <form action="https://formsubmit.co/mail@rocketmail.com" method="POST" class="rsvp-form">
+      <!-- Disable CAPTCHA -->
+      <input type="hidden" name="_captcha" value="false">
+    
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" required placeholder="Full Name">
+    
+      <label for="attending">Are you attending?</label>
+      <select id="attending" name="attending" required>
+        <option value="">Select an option</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+    
+      <label for="number">Number of attendees</label>
+      <select id="number" name="number">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+      <!-- <input type="number" id="number" name="number" min="1" placeholder="Number of attendees"> -->
+    
+      <label for="attendees">Attendees' names</label>
+      <input type="text" id="attendees" name="attendees" placeholder="Attendees' names">
+    
+      <label for="message">Leave a message</label>
+      <textarea id="message" name="message" rows="4" placeholder="Your message..."></textarea>
+    
+      <button type="submit" class="submit-button">Confirm</button>
+    </form>
+    
   </section>
+  
+  
 
   <script>
     const images = document.querySelectorAll('.background-slideshow img');
