@@ -114,6 +114,19 @@ section h2::after {
   padding: 1.5rem;
   position: relative;
 }
+.timeline-image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.timeline-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
 .day {
   font-family: 'Playfair Display', serif;
