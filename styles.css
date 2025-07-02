@@ -250,8 +250,9 @@ section h2::after {
   justify-content: center;
 }
 
-/* .agenda-image-container {
+.agenda-image-container {
   width: 100%;
+  padding: 0 1rem;
   margin: 2rem 0;
   overflow: hidden;
 }
@@ -262,10 +263,10 @@ section h2::after {
   display: block;
   border-radius: 10px;
   object-fit: cover;
-} */
+} 
 
-.agenda-image-container {
-  max-width: 600px;         /* Adjust size as needed */
+/* .agenda-image-container {
+  max-width: max;         
   margin: 2rem auto;
   padding: 0 1rem;
   text-align: center;
@@ -276,7 +277,7 @@ section h2::after {
   height: auto;
   display: block;
   border-radius: 10px;
-}
+} */
 
 
 
