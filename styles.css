@@ -381,14 +381,24 @@ section:first-of-type .scroll-indicator {
     border-radius: 12px;
   }
 }
+.snap-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.snap-container section {
+  scroll-snap-align: start;
+}
 
 
-.contact-section {
+/* .contact-section {
   padding: 3rem 1.5rem;
   text-align: center;
   background-color: transparent;
   color: #fff;
-}
+} */
 
 .section-title {
   font-family: 'Allura', cursive;
