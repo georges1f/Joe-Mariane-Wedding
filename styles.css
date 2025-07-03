@@ -107,23 +107,39 @@ h3 {
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
+.when-where-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 2rem);
+  justify-content: space-around;
+}
+
 .date-block {
   margin: 2rem 0;
   padding: 1.5rem;
   position: relative;
 }
 .celebration-image-container {
+  margin: 0 auto 1.5rem; /* Reduced bottom margin */
+  padding: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 40px;
-  margin-bottom: 30px;
-  padding: 0 20px;
+  align-items: center;
 }
 
 .celebration-image {
   max-width: 100%;
+  max-height: 40vh; /* Limit height to prevent overflow */
+  width: auto;
   height: auto;
-  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  /* display: block; */
 }
 
 .day {
@@ -164,8 +180,8 @@ h3 {
 .location-card {
   background: transparent;
   border: none;
-  padding: 1rem 1.2rem;
-  margin: 1rem auto;
+  padding: 0.8rem;
+  margin: 0.5rem auto;
   max-width: 500px;
   text-align: center;
   font-size: 0.95rem;
@@ -203,12 +219,38 @@ h3 {
 .map-button i {
   display: none;
 }
-
-/* .venue-name,
-.venue-address {
-  margin: 0.3rem 0;
-  line-height: 1.3;
-} */
+@media screen and (min-width: 768px) {
+  .celebration-image {
+    max-height: 50vh;
+  }
+}
+@media screen and (max-height: 700px) {
+  .when-where-container {
+    padding: 0.5rem 0;
+    justify-content: flex-start;
+  }
+  
+  .celebration-image {
+    max-height: 35vh;
+    margin-bottom: 1rem;
+  }
+  
+  .location-card {
+    margin: 0.6rem auto;
+    padding: 0.8rem;
+  }
+}
+@media screen and (orientation: portrait) {
+  .celebration-image {
+    max-height: 45vh;
+  }
+}
+/* For very small screens, make image even smaller */
+@media screen and (max-width: 400px) {
+  .celebration-image {
+    max-width: 70%;
+  }
+}
 
 
 
@@ -216,35 +258,10 @@ h3 {
   font-family: 'Playfair Display', serif;
   text-transform: uppercase;
   letter-spacing: 3px;
-  font-size: 0.95rem;
-  margin: 1rem 0 0.5rem;
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
   opacity: 0.8;
  }
-
-/* .map-button {
-  display: inline-block;
-  margin-top: 0.5rem;
-  padding: 0.4rem 0.8rem;
-  font-size: 0.9rem;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 30px;
-  text-decoration: none;
-  color: white;
-  font-family: 'Playfair Display', serif;
-  transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.map-button:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-  text-decoration: none;
-}  */
-
-/* .map-button i {
-  margin-left: 8px;
-  font-size: 0.9em;
-} */
 
 /* ========== AGENDA & INFO ========== */
 .agenda-item {
