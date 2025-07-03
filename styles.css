@@ -69,6 +69,7 @@ section {
   backdrop-filter: blur(1px);
   z-index: 3;
   gap: 1.5rem;
+  overflow-y: auto;
 }
 
 
@@ -409,6 +410,16 @@ section:first-of-type .scroll-indicator {
   scroll-snap-align: start;
 }
 
+.contact-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 2rem); /* Account for padding */
+}
+
 
 /* .contact-section {
   padding: 3rem 1.5rem;
@@ -419,25 +430,24 @@ section:first-of-type .scroll-indicator {
 
 .section-title {
   font-family: 'Allura', cursive;
-  font-size: 3rem;
-  margin-bottom: 0.3rem;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .rsvp-note {
   font-family: 'Playfair Display', serif;
   font-size: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: #fff;
   opacity: 0.85;
 }
 
 .rsvp-form {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: left;
+  flex: 1; /* Take remaining space */
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  justify-content: center; /* Center form vertically */
+  gap: 0.8rem; /* Reduced gap */
 }
 
 .rsvp-form label {
@@ -449,10 +459,10 @@ section:first-of-type .scroll-indicator {
 .rsvp-form input[type="text"],
 .rsvp-form select,
 .rsvp-form textarea {
-  padding: 0.6rem 1rem;
+  padding: 0.5rem 0.8rem;
   border-radius: 8px;
   border: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
   backdrop-filter: blur(5px);
@@ -479,9 +489,9 @@ section:first-of-type .scroll-indicator {
 }
 
 .submit-button {
-  margin-top: 1.5rem;
-  padding: 0.75rem 2rem;
-  font-size: 1.1rem;
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
   border: none;
   border-radius: 30px;
   background-color: #ffffff;
@@ -493,4 +503,31 @@ section:first-of-type .scroll-indicator {
 
 .submit-button:hover {
   background-color: #f0e6d6;
+}
+
+@media screen and (max-height: 700px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .rsvp-note {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .rsvp-form {
+    gap: 0.6rem;
+  }
+}
+
+/* Disable snap scrolling on short screens */
+@media screen and (max-height: 600px) {
+  .snap-container {
+    scroll-snap-type: none;
+  }
+  
+  section {
+    min-height: auto;
+    padding-bottom: 2rem;
+  }
 }
