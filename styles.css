@@ -271,19 +271,52 @@ h3 {
   justify-content: center;
 }
 
+/* Enhanced Agenda Section */
+.agenda-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
 .agenda-image-container {
   width: 100%;
-  padding: 0 1rem;
-  margin: 2rem 0;
-  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .agenda-image {
   width: 100%;
   height: auto;
-  aspect-ratio: 16/9;
+  max-height: 70vh; /* Takes majority of viewport height */
   object-fit: contain;
-  border-radius: 10px;
+}
+
+/* Adjustments for different screen sizes */
+@media screen and (max-width: 768px) {
+  .agenda-image {
+    max-height: 65vh;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .agenda-image {
+    max-height: 60vh;
+  }
+}
+
+/* Portrait orientation optimization */
+@media screen and (orientation: portrait) {
+  .agenda-image {
+    max-height: 65vh;
+  }
 }
 
 /* .agenda-image-container {
