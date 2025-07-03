@@ -38,8 +38,9 @@
   </style>
 </head>
 <script>
+  document.addEventListener('DOMContentLoaded', () => {
   const audio = document.getElementById('wedding-audio');
-  const btn = document.getElementById('play-music-btn');
+  // const btn = document.getElementById('play-music-btn');
 
   function enableAudio() {
     if (audio.muted) {
@@ -54,12 +55,12 @@
         }
       }, 200);
     }
-    if (btn) btn.style.display = 'none';
   }
 
-  // Allow interaction via scroll or click
   window.addEventListener('click', enableAudio, { once: true });
   window.addEventListener('scroll', enableAudio, { once: true });
+});
+
 </script>
 <body>
   <!-- Background Slideshow -->
@@ -98,7 +99,7 @@
       <div class="venue-name">OUR LADY OF SALVATION CHURCH</div>
       <div class="venue-address">Maamrieh, Lebanon</div>
       <a href="https://maps.app.goo.gl/51QGtzf7M5k1JwEo8" class="map-button">
-        <i class="fa-solid fa-location-dot"></i> Church Location
+         Church Location
       </a>
     </div>
     <div class="dinner-label">DINNER TO FOLLOW AT</div>
@@ -107,7 +108,7 @@
       <div class="venue-name">AL Mokhtar Restaurant</div>
       <div class="venue-address">Jensneya, Lebanon</div>
       <a href="https://maps.app.goo.gl/ELgF1s1vNzCyxisE8" class="map-button">
-        <i class="fa-solid fa-location-dot"></i> Venue Location
+         Venue Location
       </a>
     </div>
     
@@ -134,8 +135,8 @@
     <h2>Gift Registry</h2>
     <p class="agenda-item">Your presence is our biggest gift!<br> If you wish to celebrate our special day with a gift, a wedding list is available</p>
     <ul>
-      <div class="agenda-item"><span class="icon"><i class="fa-solid fa-gift"></i></span> <a href="https://www.example.com/registry1" target="_blank">Whish Money</a></div>
-      <div class="agenda-item"><span class="icon"><i class="fa-solid fa-tag"></i></span> 20230917-03</div>
+      <div class="agenda-item"> <a href="https://www.example.com/registry1" target="_blank">Whish Money</a></div>
+      <div class="agenda-item"> 20230917-03</div>
     </ul>
     <p class="scroll-indicator">Scroll down to contact us</p>
   </section>
