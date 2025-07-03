@@ -37,6 +37,30 @@
     }
   </style>
 </head>
+<script>
+  const audio = document.getElementById('wedding-audio');
+  const btn = document.getElementById('play-music-btn');
+
+  function enableAudio() {
+    if (audio.muted) {
+      audio.muted = false;
+      audio.volume = 0;
+      audio.play();
+      let fade = setInterval(() => {
+        if (audio.volume < 0.5) {
+          audio.volume = Math.min(0.5, audio.volume + 0.05);
+        } else {
+          clearInterval(fade);
+        }
+      }, 200);
+    }
+    if (btn) btn.style.display = 'none';
+  }
+
+  // Allow interaction via scroll or click
+  window.addEventListener('click', enableAudio, { once: true });
+  window.addEventListener('scroll', enableAudio, { once: true });
+</script>
 <body>
   <!-- Background Slideshow -->
   <div class="background-slideshow">
@@ -46,10 +70,12 @@
   </div>
 
   <!-- Music -->
-  <audio autoplay loop>
-    <source src="calm-music.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+  <audio id="wedding-audio" autoplay loop muted>
+  <source src="calm-music.mp3" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>
+
+
 
   <!-- Main Section -->
   <div class="snap-container">
