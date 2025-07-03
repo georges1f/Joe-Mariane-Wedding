@@ -279,6 +279,7 @@ h3 {
   align-items: center;
   min-height: 100vh;
   padding: 1rem;
+  position: relative;
 }
 
 .agenda-image-container {
@@ -286,16 +287,17 @@ h3 {
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
-  flex-grow: 1;
+  flex: 1; /* Takes available space while allowing snap */
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .agenda-image {
   width: 100%;
   height: auto;
-  max-height: 70vh; /* Takes majority of viewport height */
+  max-height: 80vh; /* Takes majority of viewport height */
   object-fit: contain;
 }
 
