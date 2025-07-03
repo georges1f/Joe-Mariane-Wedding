@@ -57,19 +57,18 @@ html, body {
 
 /* ========== SECTION STYLES ========== */
 section {
-  position: relative;
-  min-height: 100vh;
+  height: 100vh; /* force full screen height */
   width: 100%;
-  padding: 2rem 1.5rem 4rem; /* less top padding */
+  padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* move content to top */
+  justify-content: space-between; /* top-to-bottom spacing */
   align-items: center;
   text-align: center;
   backdrop-filter: blur(1px);
   z-index: 3;
-  gap: 1.5rem;
 }
+
 
 
 /* ========== TYPOGRAPHY ========== */
